@@ -47,7 +47,7 @@ class PlayViewController: UIViewController {
         resultVC.userResult = userResult
         resultVC.userOption = userOption
         
-        present(resultVC, animated: true, completion: nil)
+        self.navigationController?.show(resultVC, sender: self)
     }
     
     @IBAction func scissorsAction(_ sender: Any) {

@@ -15,13 +15,17 @@ class ResultViewController: UIViewController {
     var userResult: PlayViewController.Results?
     var userOption: PlayViewController.Options?
     
+    override func viewDidLoad() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Play Again", style: .plain, target: self, action: #selector(playAgain))
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         setResult()
         setImageResult()
     }
 
-    @IBAction func playAgain(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @objc func playAgain() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func setResult() {
